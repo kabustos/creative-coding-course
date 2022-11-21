@@ -16,8 +16,22 @@ const sketch = () => {
     w = width * 0.6;
     h = height * 0.1;
 
+    context.save();
+    context.translate(x, y);
+    context.translate(w * -0.5, h * -0.5);
+
     context.strokeStyle = 'blue';
-    context.strokeRect(x, y, w, h);
+    // context.strokeRect(x, y, w, h);
+
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(w, 0);
+    context.lineTo(w, h);
+    context.lineTo(0, h);
+    context.closePath();
+    context.stroke();
+    
+    context.restore();
   };
 };
 
